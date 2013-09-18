@@ -1,7 +1,5 @@
 Treatyourself::Application.routes.draw do
   
-
-
   root :to => "home#index"
   
   resources :owners, except: :index
