@@ -20,6 +20,7 @@
     <%= csrf_meta_tags %>
   </head>
 
+
   <body>
   	<%= render 'layouts/header'%> 
   	   
@@ -31,7 +32,8 @@
             <p id="alert"><%= flash[:alert] %></p>
           <% end %>
           <%= yield %>
-
+          <%= render 'layouts/footer'%>
+        
       </div>
     <%= javascript_include_tag "application" %>
 

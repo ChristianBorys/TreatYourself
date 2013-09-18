@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   	owner = Owner.find_by_email(params[:email])
   	if owner && owner.authenticate(params[:password])
   		session[:owner_id] = owner.id
-  		redirect_to root_path, :notice => "Welcome #{owner.email}"
+  		redirect_to current_owner, :notice => "Welcome #{owner.name}"
   	else
   		flash.now[:alert] = "Invalid name or password"
   		render "new"
