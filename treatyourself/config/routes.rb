@@ -2,6 +2,10 @@ Treatyourself::Application.routes.draw do
   
   
 
+  get "reservations/new"
+  get "reservations/edit"
+  get "reservations/show"
+  get "reservations/index"
   root :to => "home#index"
   
   resources :sessions, :only => [:new, :create, :destroy]
