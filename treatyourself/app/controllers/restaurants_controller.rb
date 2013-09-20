@@ -9,10 +9,9 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
-		@restaurant = Restaurant.new(restaurant_params)
-		if @restaurant.owner_id == current_user.id
-			@restaurant.save
-			redirect_to restaurant_path
+		@restaurant = current_owner.restaurants.build(restaurant_params)
+		if  @restaurant.save
+			redirect_to restaurant_path(@restaurant)
 		else
 			render 'new'
 		end
@@ -30,7 +29,7 @@ class RestaurantsController < ApplicationController
 		@restaurant = Restaurant.find(restaurant_params)
 
 		if @restaurant.update_attributes(restaurant_params)
-			redirect_to @restaurant
+			redirect_to @restauran
 		else
 			render 'edit'
 		end	
