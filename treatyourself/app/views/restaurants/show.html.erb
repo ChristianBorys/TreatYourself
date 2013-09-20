@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="large-12 columns ">
+    <div>
+      <%= @restaurant.name%>
+      <%= @restaurant.address%>
+    </div>
+    <p><%= link_to "register a restaurant", new_restaurant_path %></p>
+    <p><%= link_to "edit restaurant info", edit_restaurant_path %></p>
+  </div>
+</div>
+

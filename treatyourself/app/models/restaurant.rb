@@ -1,6 +1,8 @@
 class Restaurant < ActiveRecord::Base
 
-	belongs_to :owner
+	
 	validates :name, :address, :phone_number, presence: true
 	validates :owner_id, presence: :true
+	belongs_to :owner
+	#mount_uploader :image, ImageUploader
 end

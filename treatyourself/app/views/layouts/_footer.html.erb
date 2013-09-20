@@ -1,8 +1,16 @@
-<div class="footer">
-	<p>Enterprise</p>
-	<% if current_owner %>
-		Signed in as <%= link_to current_owner.name.capitalize %>, "#" <%= link_to "Log out", session_path("current"), :method => :delete %>
-	<% else %>
-		<%= link_to "Log In", new_session_path %> or <%= link_to "Sign Up", new_owner_path %>
-	<% end %>
-</div> 
+<footer class="row">
+	<div class="large-12 columns">
+		<h1>TreatYourself Footer</h1>
+		<div class="large-6 columnns">
+			<p>&copy: a RALPH BOLO production</p>
+		</div>	
+	<div class="large-6 columns">
+		<p>Enterprise</p>
+			<% if current_owner %>
+				Signed in as <%= link_to current_owner.name.capitalize, current_owner %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+		<% else %>
+			<%= link_to "Log In", new_session_path %> or <%= link_to "Sign Up", new_owner_path %>
+		<% end %>
+	</div>
+	</div>
+</footer> 

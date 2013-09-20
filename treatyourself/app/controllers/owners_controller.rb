@@ -1,4 +1,4 @@
-class OwnersController < ApplicationController
+    class OwnersController < ApplicationController
  
   def new
   	@owner = Owner.new
@@ -7,7 +7,7 @@ class OwnersController < ApplicationController
   def create
   	@owner = Owner.new(owner_params)
   	if @owner.save
-  		redirect_to owner_path, alert: "Account Created"
+  		redirect_to owner_path(@owner), alert: "Account Created"
   	else
   		render 'new'
   	end

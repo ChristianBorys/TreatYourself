@@ -1,5 +1,7 @@
 Treatyourself::Application.routes.draw do
   
+  
+
   root :to => "home#index"
   
   resources :sessions, :only => [:new, :create, :destroy]
@@ -7,6 +9,8 @@ Treatyourself::Application.routes.draw do
   resources :restaurants 
 
 
+  resources :customers, except: :index
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

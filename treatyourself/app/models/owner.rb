@@ -5,3 +5,4 @@ class Owner < ActiveRecord::Base
 	validates_presence_of :password, on: :create
 	
 end
+
